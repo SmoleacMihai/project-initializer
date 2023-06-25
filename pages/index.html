@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/index.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <ul>
+            <li><a href="#" clas="navButton" id="home">Home</a></li>
+            <li><a href="#" clas="navButton" id="about">About</a></li>
+            <li><a href="#" clas="navButton" id="projects">Projects</a></li>
+            <li><a href="#" clas="navButton" id="contact">Contact</a></li>
+            <li><a href="#" clas="navButton" id="projectInitialization">Project initialization</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-toggle" id="sidebar-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="main-content" id="main-content">
+        Wellcome
+      </div>
+
+    </div>
+    <script src="../scripts/navigationEventHandlers.js"></script>
+    <!-- <script src="renderer.js"></script> -->
+  </body>
+</html>

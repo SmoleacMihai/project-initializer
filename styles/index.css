@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px; /* Initial width of the sidebar */
+  transition: width 0.3s ease;
+  background-color: #f0f0f0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 999;
+  cursor: grab;
+}
+
+.sidebar-toggle {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ccc;
+}
+
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+.main-content {
+  flex-grow: 1;
+  background-color: #fff;
+}
