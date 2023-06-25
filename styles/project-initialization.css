@@ -1,0 +1,29 @@
+.options-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.options {
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  padding: 20px;
+  width: fit-content;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.option span {
+  font-size: 26px;
+  color: #CCCCCC;
+}
+
+.option:hover {
+  background-color: #767676;
+}

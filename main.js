@@ -3,7 +3,8 @@ const path = require('path')
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    fullscreen: true, // Set fullscreen to true
+    fullscreen: true,
+    autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -17,7 +18,6 @@ const createWindow = () => {
 app.whenReady().then(() => {
   createWindow()
 
-  console.log("log");
   app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
   });
