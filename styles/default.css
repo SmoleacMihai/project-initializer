@@ -8,43 +8,42 @@ body {
   background-color: #282C34;
 }
 
-.button {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  border-radius: 4px;
+.hidden {
+  display: none;
+}
+
+/* default button style */
+button {
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: 700;
+  font-family: Helvetica,"sans-serif";
+  transition: all .2s;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: #266ef4;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  color: white;
 }
 
-.button-primary {
-  color: #fff;
-  background-color: #3f51b5;
+button:hover {
+  background: #5989e2;
 }
 
-.button-primary:hover {
-  background-color: #2c3e9f;
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
 }
 
-.button-secondary {
-  color: #fff;
-  background-color: #f50057;
+button:hover svg {
+  transform: translateX(5px);
 }
 
-.button-secondary:hover {
-  background-color: #d5004f;
-}
-
-.button-disabled {
-  color: #999;
-  background-color: #ddd;
-  cursor: not-allowed;
-}
-
-.button-disabled:hover {
-  background-color: #ddd;
+button:active {
+  transform: scale(0.95);
 }

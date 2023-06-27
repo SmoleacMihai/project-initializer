@@ -24,6 +24,7 @@ h1 {
 .options-container {
   display: flex;
   flex-direction: column;
+  row-gap: 10px;
 }
 
 .options {
@@ -49,8 +50,4 @@ h1 {
 
 .option:hover {
   background-color: #767676;
-}
-
-.back-button {
-  
 }

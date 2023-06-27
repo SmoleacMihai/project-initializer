@@ -8,4 +8,3 @@ const MyButton = ({ children, variant, disabled, onClick }) => {
   `;
 };
 
-export default MyButton;

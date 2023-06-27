@@ -1,7 +1,54 @@
+const optionsContainer = document.querySelector('.options-container1');
+const button = document.getElementById('backButton');
+const reactButton = document.getElementById('react');
+const svelteButton = document.getElementById('svelte');
+const vueButton = document.getElementById('vue');
 
+const stepObj = {
+  step: 1
+};
 
+const projectData = {
+  projectName: '',
+  choosenFramework: '',
+  frameworkOfFramework: ''
+};
 
+const stepProxy = new Proxy(stepObj, {
+  set: function (target, key, value) {
+    if(value > 1) {
+      button.classList.remove('hidden');
+      svelteButton.classList.add('hidden');
+      vueButton.classList.add('hidden');
+      reactButton.classList.add('hidden');
+      console.log(svelteButton.classList);
+    } else button.classList.add('hidden');
+    
+    target[key] = value;
+    return true;
+  }
+});
 
+button.addEventListener('click', () => {
+  stepProxy.step = stepObj.step - 1
+});
+
+reactButton.addEventListener('click', () => {
+  console.log("clicknul na react");
+  stepProxy.step = stepObj.step + 1
+
+});
+
+vueButton.addEventListener('click', () => {
+  console.log("clicknul na vue");
+  stepProxy.step = stepObj.step + 1
+
+});
+
+svelteButton.addEventListener('click', () => {
+  console.log("clicknul na svelteButton");
+  stepProxy.step = stepObj.step + 1
+});
 
 
 
