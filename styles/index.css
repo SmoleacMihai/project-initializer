@@ -8,40 +8,49 @@
 .container {
   display: flex;
   height: 100vh;
-}
-
-.header {
-  font-size: 16px;
   padding: 20px;
-  padding-left: 32px;
-  font-size: 32px;
 }
 
-.sidebar {
-  width: 20%;
-  background-color: #21252B;
-  color: #CCCCCC;
+h1 {
+  color: #CCC;
+  margin-bottom: 20px;
 }
-
-.sidebar ul {
-  list-style-type: none;
-}
-
-.sidebar a {
-  display: block;
-  padding: 10px;
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: #CCCCCC;
-  padding-left: 32px;
-}
-
-.sidebar a:hover {
-  background-color: #2C313A;
-}
-
 
 .main-content {
   flex-grow: 1;
   background-color: #fff;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+  padding: 20px;
+  width: fit-content;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.option span {
+  font-size: 26px;
+  color: #CCCCCC;
+}
+
+.option:hover {
+  background-color: #767676;
+}
+
+.back-button {
+  
 }
