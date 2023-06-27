@@ -1,5 +1,9 @@
 const { app, BrowserWindow } = require('electron');
-const path = require('path')
+const path = require('path');
+
+process.env.NODE_ENV = 'development';
+
+const isDev = process.env.NODE_ENV !== 'production';
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -9,12 +13,11 @@ const createWindow = () => {
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      contextIsolation: true, 
-      worldSafeExecuteJavaScript: true
+      nodeIntegration: true,
     }
-  })
+  });
 
-  win.webContents.openDevTools();
+  isDev ? win.webContents.openDevTools() : null;
 
   win.loadFile('pages/index.html')
 }

@@ -4,28 +4,41 @@
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+    <title>Project initialization</title>
+    <link rel="stylesheet" href="../styles/default.css">
     <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/project-initialization.css">
+
   </head>
   <body>
     <div class="container">
-      <div class="sidebar">
-        <div class="header">Initializator</div>
-        <ul>
-          <li><a href="#" clas="navButton" id="home">Home</a></li>
-          <li><a href="#" clas="navButton" id="projectInitialization">Project initialization</a></li>
-          <li><a href="#" clas="navButton" id="about">About</a></li>
-          <li><a href="#" clas="navButton" id="projects">Projects</a></li>
-          <li><a href="#" clas="navButton" id="contact">Contact</a></li>
-          <li><a href="#" clas="navButton" id="settings">Settings</a></li>
-        </ul>
+      <div class="options-container">
+        <h1>Choose a framework</h1>
+  
+        <div class="options">
+          <div class="option" id="vue">
+            <img src="../assets/images/vue.svg" alt="Vue.js" width="32" height="32" />
+            <span>Vue.js</span>
+          </div>
+          <div class="option" id="react">
+            <img src="../assets/images/react.svg" alt="React" width="32" height="32" />
+            <span>React</span>
+          </div>
+          <div class="option" id="svelte">
+            <img src="../assets/images/svelte.svg" alt="Svelte" width="32" height="32" />
+            <span>Svelte</span>
+          </div>
+        </div>
+  
+        <div class="back-button">
+          <button id="backButton">&lt; Back</button>
+        </div>
       </div>
+  
 
-      <div class="main-content" id="main-content">
-        Wellcome
-      </div>
 
     </div>
+    
     <script src="../scripts/navigationEventHandlers.js"></script>
     <!-- <script src="renderer.js"></script> -->
   </body>
