@@ -3,6 +3,8 @@ const button = document.getElementById('backButton');
 const reactButton = document.getElementById('react');
 const svelteButton = document.getElementById('svelte');
 const vueButton = document.getElementById('vue');
+const nextButton = document.getElementById('nextjs');
+const dialogButton = document.getElementById('dialog');
 
 const makeStepOneHidden = () => {
   button.classList.remove('hidden');
@@ -18,18 +20,30 @@ const makeStepOneVisible = () => {
   reactButton.classList.remove('hidden');
 }
 
-const stepObj = {
-  step: 1
-};
+const makeStepTwoVisible = () => {}
 
 const projectData = {
   projectName: '',
   choosenFramework: '',
-  frameworkOfFramework: ''
+  frameworkOfFramework: '',
+  step: 1,
+  incrementStep () {
+    this.step = this.step + 1
+  },
+  decrementStep () {
+    this.step = this.step - 1
+  },
+  setProjectName (projectName) {
+    this.projectName = projectName
+  },
+  setChoosenFramework (choosenFramework) {
+    this.choosenFramework = choosenFramework
+  },
 };
 
-const stepProxy = new Proxy(stepObj, {
+const projectDataProxy = new Proxy(projectData, {
   set: function (target, key, value) {
+    console.log(value);
     if(value > 1) {
       makeStepOneHidden();
     } else {
@@ -41,31 +55,36 @@ const stepProxy = new Proxy(stepObj, {
   }
 });
 
+
 button.addEventListener('click', () => {
-  stepProxy.step = stepObj.step - 1
+  projectDataProxy.decrementStep();
+  projectDataProxy.setProjectName('');
 });
 
 reactButton.addEventListener('click', () => {
-  console.log("clicknul na react");
-  stepProxy.step = stepObj.step + 1
-
+  projectDataProxy.incrementStep();
 });
 
 vueButton.addEventListener('click', () => {
-  console.log("clicknul na vue");
-  stepProxy.step = stepObj.step + 1
-
+  projectDataProxy.incrementStep();
 });
 
 svelteButton.addEventListener('click', () => {
-  console.log("clicknul na svelteButton");
-  stepProxy.step = stepObj.step + 1
+  projectDataProxy.incrementStep();
 });
 
-
-
-
-
+console.log(electronAPI);
+dialogButton.addEventListener('click', () => {
+  const directoryPath = electronAPI?.selectDirectory();
+  
+  if (directoryPath) {
+    // Directory path is selected, do something with it
+    console.log('Selected directory:', directoryPath);
+  } else {
+    // No directory is selected or selection is cancelled
+    console.log('No directory selected.');
+  }
+})
 
 
 
