@@ -66,6 +66,7 @@ reactButton.addEventListener('click', () => {
 });
 
 vueButton.addEventListener('click', () => {
+  console.log('hehe boy')
   projectDataProxy.incrementStep();
 });
 
